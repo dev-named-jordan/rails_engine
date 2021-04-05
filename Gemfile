@@ -43,7 +43,6 @@ group :development, :test do
   gem 'faker'
   gem 'fast_jsonapi'
   gem 'pry'
-  gem 'shoulda-matchers'
 end
 
 group :development do
@@ -54,7 +53,7 @@ group :test do
   gem 'rspec-rails'
   gem 'capybara'
   gem 'launchy'
-  gem 'simplecov'
+  # gem 'simplecov'
   gem 'orderly'
 end
 

@@ -1,23 +1,23 @@
 class Api::V1::ItemsController < ApplicationController
   def index
-    render json: Item.all
+    items = Item.all
+    # require "pry"; binding.pry
+    render json: ItemSerializer.new(items)
   end
 
   def show
-    render json: Item.find(params[:id])
+    item = Item.find(params[:id])
+    render json: ItemSerializer.new(item)
   end
 
-  # def show_item_merchant
-  #   item = Item.find(params[:id])
-  #   render json: Merchant.find(item.merchant_id)
-  # end
-
   def create
-    render json: Item.create(item_params)
+    item = Item.create(item_params)
+    render json: ItemSerializer.new(item)
   end
 
   def update
-    render json: Item.update(params[:id], item_params)
+    item = Item.update(params[:id], item_params)
+    render json: ItemSerializer.new(item)
   end
 
   def destroy
