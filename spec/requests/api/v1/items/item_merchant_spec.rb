@@ -11,10 +11,10 @@ describe "Items API" do
 
     expect(response).to be_successful
 
-    expect(merchant_parse).to have_key(:id)
-    expect(merchant_parse[:id]).to be_an(Integer)
+    expect(merchant_parse[:data]).to have_key(:id)
+    expect(merchant_parse[:data][:id]).to be_an(String)
 
-    expect(merchant_parse).to have_key(:name)
-    expect(merchant_parse[:name]).to be_an(String)
+    expect(merchant_parse[:data][:attributes]).to have_key(:name)
+    expect(merchant_parse[:data][:attributes][:name]).to be_an(String)
   end
 end
