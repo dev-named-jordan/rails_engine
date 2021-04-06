@@ -1,23 +1,25 @@
 class Api::V1::ItemsController < ApplicationController
   def index
-    render json: Item.all
+    # require "pry"; binding.pry
+    # items = Item.order(created_at: :desc).limit(20).offset(@page * 20)
+    items = Item.all
+    # require "pry"; binding.pry
+    render json: ItemSerializer.new(items)
   end
 
   def show
-    render json: Item.find(params[:id])
+    item = Item.find(params[:id])
+    render json: ItemSerializer.new(item)
   end
 
-  # def show_item_merchant
-  #   item = Item.find(params[:id])
-  #   render json: Merchant.find(item.merchant_id)
-  # end
-
   def create
-    render json: Item.create(item_params)
+    item = Item.create(item_params)
+    render json: ItemSerializer.new(item)
   end
 
   def update
-    render json: Item.update(params[:id], item_params)
+    item = Item.update(params[:id], item_params)
+    render json: ItemSerializer.new(item)
   end
 
   def destroy
@@ -29,4 +31,8 @@ class Api::V1::ItemsController < ApplicationController
   def item_params
     params.require(:item).permit(:name, :unit_price, :merchant_id, :description)
   end
+
+  # def set_page
+  #   @page = params[:page] || 0
+  # end
 end
