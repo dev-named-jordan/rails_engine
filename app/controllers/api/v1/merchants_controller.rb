@@ -1,7 +1,6 @@
 class Api::V1::MerchantsController < ApplicationController
   def index
-    merchants = Merchant.all
-    render json: MerchantSerializer.new(merchants)
+    render json: MerchantSerializer.new(Merchant.all.limit(query_size).offset(page_offset))
   end
 
   def show
