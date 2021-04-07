@@ -43,6 +43,7 @@ group :development, :test do
   gem 'faker'
   gem 'fast_jsonapi'
   gem 'pry'
+  gem 'active_designer'
 end
 
 group :development do
