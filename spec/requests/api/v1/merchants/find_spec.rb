@@ -16,6 +16,6 @@ RSpec.describe 'Find one Merchant API' do
     expect(parsed).to be_a Hash
     # require "pry"; binding.pry
     expect(parsed[:data][0][:attributes][:name]).to eq(merchant.name)
-    expect(parsed.size).to eq 1
+    expect(parsed.size).to eq(1)
   end
 end
