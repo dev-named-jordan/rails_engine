@@ -1,10 +1,6 @@
 class Api::V1::ItemsController < ApplicationController
   def index
-    # require "pry"; binding.pry
-    # items = Item.order(created_at: :desc).limit(20).offset(@page * 20)
-    items = Item.all
-    # require "pry"; binding.pry
-    render json: ItemSerializer.new(items)
+    render json: ItemSerializer.new(Item.all.limit(query_size).offset(page_offset))
   end
 
   def show
@@ -31,8 +27,4 @@ class Api::V1::ItemsController < ApplicationController
   def item_params
     params.require(:item).permit(:name, :unit_price, :merchant_id, :description)
   end
-
-  # def set_page
-  #   @page = params[:page] || 0
-  # end
 end
