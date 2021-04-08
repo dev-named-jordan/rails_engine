@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
+      namespace :revenue do
+        resources :merchants, only: [:show], controller: :merchant 
+      end
       namespace :merchants do
         resources :find, only: [:index], controller: :merchant_search
       end
