@@ -9,9 +9,9 @@ RSpec.describe Item, type: :request do
       get "/api/v1/items?page=1&per_page=20"
 
       expect(response).to be_successful
+      # require "pry"; binding.pry
 
       items = JSON.parse(response.body, symbolize_names: true)
-# require "pry"; binding.pry
       expect(items[:data].count).to eq(20)
     end
   end
