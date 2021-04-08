@@ -2,6 +2,8 @@ require 'rails_helper'
 
 describe "Merchants API" do
   it "sends a list of merchants" do
+    Merchant.destroy_all
+    Item.destroy_all
     create_list(:merchant, 20)
 
     get '/api/v1/merchants'

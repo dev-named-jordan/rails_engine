@@ -2,6 +2,8 @@ require 'rails_helper'
 
 describe "Items API" do
   it "can create a new item" do
+    Merchant.destroy_all
+    Item.destroy_all
     merchant = create(:merchant)
     item_params = ({
         "name": "value1",

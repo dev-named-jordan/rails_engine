@@ -3,6 +3,8 @@ require 'rails_helper'
 RSpec.describe 'Find one Merchant API' do
   it 'finds one merchant' do
     Merchant.destroy_all
+    Item.destroy_all
+    Merchant.destroy_all
     merchants = create_list(:merchant, 200)
     merchant = merchants.sample
 
@@ -19,6 +21,8 @@ RSpec.describe 'Find one Merchant API' do
     expect(parsed[:data]).not_to be_a Array
   end
   it 'finds no merchant' do
+    Merchant.destroy_all
+    Item.destroy_all
     Merchant.destroy_all
     merchants = create_list(:merchant, 100)
     merchant = merchants.sample

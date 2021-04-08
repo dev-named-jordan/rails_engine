@@ -2,6 +2,8 @@ require 'rails_helper'
 
 describe "Merchants API" do
   it "can get one merchant by its id" do
+    Merchant.destroy_all
+    Item.destroy_all
     id = create(:merchant).id
 
     get "/api/v1/merchants/#{id}"
