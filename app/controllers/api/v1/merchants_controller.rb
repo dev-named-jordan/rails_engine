@@ -1,5 +1,7 @@
 class Api::V1::MerchantsController < ApplicationController
   def index
+    # require "pry"; binding.pry
+
     render json: MerchantSerializer.new(Merchant.all.limit(query_size).offset(page_offset))
   end
 

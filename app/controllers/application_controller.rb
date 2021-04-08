@@ -1,6 +1,5 @@
 class ApplicationController < ActionController::API
   def query_size
-    # require "pry"; binding.pry
     @query_size = (params[:per_page] ||= 20)
   end
 
