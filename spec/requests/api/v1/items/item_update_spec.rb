@@ -2,6 +2,8 @@ require 'rails_helper'
 
 describe "Items API" do
   it "can update an existing item" do
+    Merchant.destroy_all
+    Item.destroy_all
     merchant = create(:merchant)
     id = create(:item, merchant_id: merchant.id).id
     previous_name = Item.last.name

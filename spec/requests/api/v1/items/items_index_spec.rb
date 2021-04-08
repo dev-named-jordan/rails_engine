@@ -2,6 +2,8 @@ require 'rails_helper'
 
 describe "Items API" do
   it "sends a list of all items" do
+    Merchant.destroy_all
+    Item.destroy_all
     @merchant = create(:merchant)
     @items = create_list(:item, 20, merchant_id: @merchant.id)
 
@@ -33,6 +35,8 @@ describe "Items API" do
     end
   end
   it "sends a list of all items" do
+    Merchant.destroy_all
+    Item.destroy_all
     @merchant = create(:merchant)
     @items = []
 

@@ -2,6 +2,8 @@ require 'rails_helper'
 
 describe "Items API" do
   it "can get one item by its id, and display it's merchant data" do
+    Merchant.destroy_all
+    Item.destroy_all
     @merchant = create(:merchant)
     @item = create(:item, merchant_id: @merchant.id)
 
