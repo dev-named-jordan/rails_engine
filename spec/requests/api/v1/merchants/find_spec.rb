@@ -24,7 +24,7 @@ RSpec.describe 'Find one Merchant API' do
     Merchant.destroy_all
     Item.destroy_all
     Merchant.destroy_all
-    merchants = create_list(:merchant, 100)
+    merchants = create_list(:merchant, 10)
     merchant = merchants.sample
 
     get "/api/v1/merchants/find?name=thisshouldnotexit"
