@@ -1,5 +1,7 @@
 # README
 
+https://www.linkedin.com/in/jordan-f-beck/
+
 - Ruby and Rails version 
 
 Ruby 2.5.3
