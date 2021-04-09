@@ -46,9 +46,13 @@ rails s
 in the browser
 
 http://localhost:3000/api/v1/items
+
 http://localhost:3000/api/v1/merchants
+
 http://localhost:3000/api/v1/items/find_all?min_price=201&max_price=599
+
 http://localhost:3000/api/v1/merchants/find?name=thisshouldnotexit
+
 
 
 
