@@ -1,10 +1,5 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
 - Ruby and Rails version 
 
 Ruby 2.5.3
@@ -13,6 +8,8 @@ Rails 5.2.5
 
 - System dependencies
 
+Active Record
+Active_designer
 Ruby on Rails
 RSpec
 Factory Bot
@@ -54,6 +51,6 @@ http://localhost:3000/api/v1/items/find_all?min_price=201&max_price=599
 http://localhost:3000/api/v1/merchants/find?name=thisshouldnotexit
 
 
-
+Here is a screenshot of my relationships in active_designer.
 
 ![Screen Shot 2021-04-08 at 5 37 18 PM](https://user-images.githubusercontent.com/68141454/114122938-88b18980-98ae-11eb-92ba-93c2a8a16789.png)
